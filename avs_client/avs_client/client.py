@@ -1,6 +1,10 @@
 from functools import wraps
-
-from hyper.http20.exceptions import StreamResetError
+try:
+    from hyper.http20.exceptions import StreamResetError
+except:
+    import imp
+    exceptions = imp.load_source('exceptions', '/usr/lib/python2.7/site-packages/hyper/http20/exceptions.py')
+    from exceptions import StreamResetError
 
 from avs_client.avs_client import authentication, connection, device, ping
 
