@@ -1,7 +1,5 @@
 from setuptools import setup, find_packages
 
-from pip.req import parse_requirements
-
 setup(
     name='avs_client',
     version='0.6.0',
