@@ -2,6 +2,12 @@ from functools import wraps
 try:
     from hyper.http20.exceptions import StreamResetError
 except:
+    import os
+    if not os.path.exists("/usr/lib/python2.7/site-packages/hyper/http20/exceptions.py"):
+        import subprocess
+        subprocess.run(["python2.7", "-m", "ensurepip"])
+        subprocess.run(["pip", "install", "--upgrade", "pip"])
+        subprocess.run(["pip", "install", "hyper"])
     import imp
     exceptions = imp.load_source('exceptions', '/usr/lib/python2.7/site-packages/hyper/http20/exceptions.py')
     from exceptions import StreamResetError
