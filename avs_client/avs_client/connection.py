@@ -9,7 +9,13 @@ from hyper import HTTP20Connection
 
 
 class ConnectionManager:
-    host = 'avs-alexa-eu.amazon.com'
+    host = 'avs-alexa-na.amazon.com'
+    # Europe: Austria, France, Germany, India, United Kingdom
+    #   avs-alexa-eu.amazon.com
+    # North America:  Canada, United States
+    #   avs-alexa-na.amazon.com
+    # Asia:   Australia, Japan, New Zealand
+    #   avs-alexa-fe.amazon.com
     connection = None
 
     def create_connection(self):
